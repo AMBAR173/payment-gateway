@@ -5,6 +5,6 @@ provider "aws" {
 resource "aws_vpc" "dev" {
   cidr_block = var.vpc_cidr
   tags = {
-    Name = "${var.env}-vpc-${var.region}"
+    Name = "TEsting tags"
   }
 }
