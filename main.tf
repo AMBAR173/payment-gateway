@@ -4,7 +4,16 @@ provider "aws" {
 
 resource "aws_vpc" "dev" {
   cidr_block = var.vpc_cidr
+
+  lifecycle {
+    precondition {
+      condition     = var.env != "sandbox" || can(regex("^CHG-[0-9]+$", trimspace(var.change_number)))
+      error_message = "A valid change number is required before applying sandbox changes."
+    }
+  }
+
   tags = {
-    Name = "${var.env}-vpc-${var.region}"
+    Name         = "payment-vppppppc-${var.env}"
+    ChangeNumber = var.change_number
   }
 }
