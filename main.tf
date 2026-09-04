@@ -13,7 +13,7 @@ resource "aws_vpc" "dev" {
   }
 
   tags = {
-    Name         = "payment-vpc-${var.env}"
+    Name         = "payment-vppppppc-${var.env}"
     ChangeNumber = var.change_number
   }
 }
