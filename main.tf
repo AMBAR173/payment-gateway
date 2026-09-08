@@ -12,3 +12,15 @@ resource "aws_vpc" "dev" {
     App   = "Payment-Gateway"
   }
 }
+
+resource "aws_subnet" "dev" {
+  vpc_id                  = aws_vpc.dev.id
+  cidr_block              = var.subnet_cidr
+  availability_zone       = var.availability_zone
+  map_public_ip_on_launch = true
+
+  tags = {
+    Name = "${var.env}-subnet-${var.availability_zone}"
+    Env  = var.env
+  }
+}
