@@ -4,8 +4,7 @@ variable "env" {
 }
 
 variable "region" {
-  type    = string
-  default = "us-east-1"
+  type = string
 }
 
 variable "vpc_cidr" {
@@ -19,6 +18,7 @@ variable "subnet_cidr" {
 }
 
 variable "availability_zone" {
-  type    = string
-  default = "us-east-1a"
+  type     = string
+  nullable = true
+  default  = null
 }
