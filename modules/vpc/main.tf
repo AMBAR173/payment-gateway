@@ -1,7 +1,7 @@
-resource "aws_vpc" "this" {
-  cidr_block = var.vpc_cidr
+resource "aws_internet_gateway" "gw" {
+  vpc_id = var.vpc_id
 
   tags = {
-    Name = "${var.env}-vpc-${var.region}"
+    Name = "payedge-igw"
   }
 }
