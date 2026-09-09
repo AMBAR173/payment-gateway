@@ -13,7 +13,7 @@ locals {
 resource "aws_vpc" "dev" {
   cidr_block = var.vpc_cidr
   tags = {
-    Name  = "Devlop enviornment VPC"
+    Name  = "PayEdge Dev VPC"
     Env   = "Dev"
     vpc   = "dev vpc"
     Owner = "Ambar"
