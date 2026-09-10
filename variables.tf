@@ -4,7 +4,8 @@ variable "env" {
 }
 
 variable "region" {
-  type = string
+  type        = string
+  description = "AWS region for this workspace. Set this in each TFE workspace."
 }
 
 variable "vpc_cidr" {
@@ -18,7 +19,8 @@ variable "subnet_cidr" {
 }
 
 variable "availability_zone" {
-  type     = string
-  nullable = true
-  default  = null
+  type        = string
+  default     = null
+  nullable    = true
+  description = "Optional AZ for the subnet. If omitted, Terraform selects the first available AZ in the configured region."
 }
