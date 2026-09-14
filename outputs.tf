@@ -5,3 +5,7 @@ output "subnet_id" {
 output "internet_gateway_id" {
   value = module.payedge_vpc.internet_gateway_id
 }
+
+output "private_subnet_id" {
+  value = module.payedge_vpc.private_subnet_id
+}
