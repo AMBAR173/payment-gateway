@@ -7,7 +7,7 @@ resource "aws_internet_gateway" "gw" {
 }
 
 resource "aws_subnet" "private_subnet" {
-  vpc_id = var.vpc_id
+  vpc_id     = var.vpc_id
   cidr_block = var.subnet_cidr
 
   tags = {
