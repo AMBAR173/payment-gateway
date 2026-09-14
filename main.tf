@@ -32,10 +32,3 @@ resource "aws_subnet" "payedge_vpc" {
     Env  = var.env
   }
 }
-
-module "payedge_vpc" {
-  source = "./modules/vpc"
-
-  vpc_id      = aws_vpc.payedge_vpc.id
-  subnet_cidr = "10.0.2.0/24"
-}
